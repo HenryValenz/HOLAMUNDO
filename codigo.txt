@@ -1,0 +1,29 @@
+export PROJECT_ID=idcarpetadeproyecto
+echo $PROJECT_ID
+
+gcloud services enable container.googleapis.com --project $PROJECT_ID
+gcloud services enable monitoring.googleapis.com --project $PROJECT_ID
+gcloud services enable cloudtrace.googleapis.com --project $PROJECT_ID
+gcloud services enable cloudprofiler.googleapis.com --project $PROJECT_ID
+
+mkdir
+ls
+mkdir practicakubernet
+ls
+cd practicakubernet
+gcloud container clusters create butin-onlline --zone us-central1-a --machine-type=e2-standard-2 --disk-size 20GB --num-nodes=4
+
+crear el microservicio
+git clone GITQUENOSDARAN
+ls
+cd microservicios
+kubectl apply -f ./release/kubernets-manifest.yaml
+LUEGO NOS VAMOS A PUERTAS DE ENLACE, INGRESS Y SERVICE
+SERVICIOS 
+fronted-external link y OK
+
+
+borrrar
+gcloud container clusters delete butin-online --zone us-central1-a
+
+
